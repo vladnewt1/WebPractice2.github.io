@@ -6,7 +6,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #181818; /* Чорний фон */
+    color: #ffffff; /* Білий текст для контрасту */
 }
 
 .header {
@@ -14,11 +15,12 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #fff;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    background-color: #202020; /* Темний фон для заголовка */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-radius: 0 0 15px 15px;
 }
 
 .logo {
@@ -30,20 +32,30 @@ body {
 .search-bar-container {
     display: flex;
     width: 50%;
+    background-color: #333333; /* Темний фон для пошуку */
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .search-bar {
     flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #ffffff;
 }
 
 .search-btn {
-    padding: 8px;
-    background-color: #eee;
+    padding: 10px 15px;
+    background-color: #444444; /* Темний фон для кнопки пошуку */
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
 }
 
 .user-options {
@@ -52,21 +64,45 @@ body {
     gap: 20px;
 }
 
+.user-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #444444;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50%;
+    border: 2px solid #606060; /* Обведення для аватарки */
+    cursor: pointer;
+}
+
 .top-navigation {
     display: flex;
     gap: 10px;
     padding: 10px 20px;
-    background-color: #fff;
+    background-color: #202020; /* Темний фон для навігації */
     overflow-x: auto;
     white-space: nowrap;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
 }
 
 .top-navigation button {
-    padding: 10px;
+    padding: 10px 20px;
     border: none;
-    background-color: #f1f1f1;
+    background-color: #333333;
+    color: #ffffff;
     border-radius: 20px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.top-navigation button:hover {
+    background-color: #555555;
 }
 
 .container {
@@ -75,14 +111,16 @@ body {
 }
 
 .sidebar {
-    width: 200px;
+    width: 250px;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #202020; /* Темний фон для бокової панелі */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
 }
 
 .sidebar ul {
     list-style: none;
+    padding: 0;
 }
 
 .sidebar li {
@@ -91,12 +129,20 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar li:hover {
+    background-color: #333333;
 }
 
 .main-content {
     flex: 1;
     padding: 20px;
-    background-color: #f1f1f1;
 }
 
 .video-grid {
@@ -107,27 +153,67 @@ body {
 
 .video-card {
     width: calc(25% - 20px);
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
+    background-color: #333333; /* Темний фон для карток відео */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+    transform: scale(1.05);
 }
 
 .video-card img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 15px;
     margin-bottom: 10px;
 }
 
 .video-card h3 {
     font-size: 14px;
     font-weight: bold;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 5px;
 }
 
 .video-card p {
     font-size: 12px;
+    color: #aaaaaa;
+}
+
+.shorts-section {
+    margin-top: 20px;
+}
+
+.shorts-section h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.shorts-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.short-card {
+    flex: 1;
+    background-color: #333333; /* Темний фон для карток Shorts */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.short-card:hover {
+    transform: scale(1.05);
+}
+
+.short-card img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
